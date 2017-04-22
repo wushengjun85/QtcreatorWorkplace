@@ -1,0 +1,123 @@
+#include "widget.h"
+#include "ui_widget.h"
+#include<QString>
+#include <QTextCodec>
+
+QString m_scrollCaptionStr;
+
+char *stringarry = {"汉字"};
+
+Widget::Widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::Widget)
+{
+    ui->setupUi(this);
+
+
+    QString uuu = QString(stringarry);
+    ui->label_3->setText(uuu);
+
+
+    for(int i=0;i<5;i++)
+    {
+        ui->listWidget->addItem(tr("item : ") + QString::number(i));
+    }
+    ui->listWidget->setGridSize(QSize(93,93));
+    QListWidgetItem * pItem = new QListWidgetItem;
+    pItem->setSizeHint(QSize(90, 92));  //每次改变Item的高度
+    //pItem->
+
+    pItem->setText("大节点");
+
+    ui->listWidget->insertItem(6,pItem);
+    ui->listWidget->setGridSize(QSize(93,93));
+
+    //ui->listWidget-> setStyleSheet("gridline-color: rgb(255, 0, 0)");//"border:2px solid red;"
+    //ui->listWidget->setGridSize(QSize(20,20));
+
+   //QString m_scrollCaptionStr = QStringLiteral("欢迎加入我们：Qt分享&&交流 26197884")；
+    m_scrollCaptionStr = "豪威尔欢迎您";
+    m_timer = new QTimer(this);
+    connect(m_timer,  SIGNAL(timeout()),  this,  SLOT(scrollCaption()));
+    m_timer->start(300);
+
+
+
+    setMinimumWidth(50);
+    setMinimumHeight(40);
+    m_curIndex = 0;//当前角码
+    m_showText = "This is a textTicker Text!";//显示的文字
+   // m_charWidth = fontMetrics().width("a");//每个字符的宽度
+    m_charWidth = fontMetrics().height();//每个字符的宽度
+
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this,SLOT(updateIndex()));
+    timer->start(100);
+}
+
+Widget::~Widget()
+{
+    delete ui;
+}
+
+void Widget::on_pushButton_clicked()
+{
+    ui->listWidget->close();
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void Widget::on_pushButton_2_clicked()
+{
+    ui->listWidget->show();
+}
+
+void Widget::on_listWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
+{
+    if(current==Q_NULLPTR)return;
+    if(previous!=Q_NULLPTR)
+    {
+        previous->setBackgroundColor(Qt::transparent);
+        previous->setTextColor(Qt::black);
+    }
+    current->setBackgroundColor(Qt::red);
+    current->setTextColor(Qt::blue);
+}
+
+void Widget::on_pushButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void Widget::scrollCaption()
+{
+    static int nPos = 0;
+    if (nPos > m_scrollCaptionStr.length())
+    {
+        nPos = 0;
+    }
+
+    ui->label->setText(m_scrollCaptionStr.mid(nPos));
+    nPos++;
+}
+
+
+
+void Widget::paintEvent(QPaintEvent *event)
+{
+   // __super::paintEvent(event);
+    QPainter painter(this);
+    painter.drawText(0, 30, m_showText.mid(m_curIndex));
+    painter.drawText(width() - m_charWidth*m_curIndex, 30, m_showText.left(m_curIndex));
+//    painter.drawText(0, 30, m_showText);
+//    painter.drawText(height() - m_charWidth*m_curIndex, 30, m_showText.left(m_curIndex));
+}
+
+void Widget::updateIndex()
+{
+    update();
+    m_curIndex++;
+    if (m_curIndex*m_charWidth >width())
+        m_curIndex = 0;
+}
