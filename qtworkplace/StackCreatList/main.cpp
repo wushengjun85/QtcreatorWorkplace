@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 /*****************定义stack结构***********************/
 template <typename DataType>
