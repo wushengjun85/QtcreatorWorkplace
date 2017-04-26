@@ -23,7 +23,6 @@ public:
     bool isEmpty();
     /*******************获取元素*****************/
     int eleNumber();
-
 private:
     DataType *elements;
     int top;
