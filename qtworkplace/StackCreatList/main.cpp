@@ -118,7 +118,6 @@ template <class T> T QueueFromStack<T>::pop()
     if(!s2->isEmpty())
     {
         return s2->pop();
-
     }
     else
     {
