@@ -130,7 +130,7 @@ template <class T> T QueueFromStack<T>::pop()
     }
 }
 /*****************测试函数***************************/
-int main(int argc, char *argv[])
+int main()
 {
     QueueFromStack<int>qs(12);
     cout<<"入队元素："<<endl;
