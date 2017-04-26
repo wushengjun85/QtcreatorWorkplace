@@ -71,7 +71,6 @@ int Stack<DataType>::eleNumber()
         return 0;
     }
 }
-
 /**************************利用栈实现队列功能**************/
 template <class T>
 class QueueFromStack
