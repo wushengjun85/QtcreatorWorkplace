@@ -21,7 +21,6 @@ void Widget::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.save();
-
 #if 0
     //线性渐变
     QLinearGradient linearGradient(10,10,100,100);
