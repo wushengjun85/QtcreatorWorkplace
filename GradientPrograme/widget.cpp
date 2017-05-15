@@ -21,6 +21,7 @@ void Widget::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.save();
+
 #if 0
     //线性渐变
     QLinearGradient linearGradient(10,10,100,100);
@@ -64,7 +65,6 @@ void Widget::paintEvent(QPaintEvent *event)
     conicalGradient.setColorAt(1.0,Qt::red);
 
     //设置渐变的颜色和路径比例
-
 
     painter.setBrush(QBrush(conicalGradient));
     painter.drawEllipse(10, 230, 100, 100);//在相应的坐标画出来
