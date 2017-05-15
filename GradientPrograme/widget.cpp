@@ -22,7 +22,7 @@ void Widget::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.save();
 
-#if 0
+#if 1
     //线性渐变
     QLinearGradient linearGradient(10,10,100,100);
     //创建了一个QLinearGradient对象实例，参数为起点和终点坐标，可作为颜色渐变的方向
@@ -50,19 +50,15 @@ void Widget::paintEvent(QPaintEvent *event)
 #endif
 
     //弧度渐变
-    QConicalGradient conicalGradient(10+50,  230 + 50,0);
+    QConicalGradient conicalGradient(10+50,  230 + 50,160);
     //创建了一个QConicalGradient对象实例，参数分别为中心坐标和初始角度
-//    conicalGradient.setColorAt(0,Qt::green);
-//    conicalGradient.setColorAt(0.5,Qt::white);
-//    conicalGradient.setColorAt(0.4,Qt::blue);
-//    conicalGradient.setColorAt(0.6,Qt::red);
-//    conicalGradient.setColorAt(0.8,Qt::yellow);
-//    conicalGradient.setColorAt(1.0,Qt::green);
-
-
     conicalGradient.setColorAt(0,Qt::green);
-    conicalGradient.setColorAt(0.1,Qt::white);
-    conicalGradient.setColorAt(1.0,Qt::red);
+    conicalGradient.setColorAt(0.5,Qt::white);
+    conicalGradient.setColorAt(0.4,Qt::blue);
+    conicalGradient.setColorAt(0.6,Qt::red);
+    conicalGradient.setColorAt(0.8,Qt::yellow);
+    conicalGradient.setColorAt(1.0,Qt::green);
+
 
     //设置渐变的颜色和路径比例
 
@@ -72,16 +68,22 @@ void Widget::paintEvent(QPaintEvent *event)
 
     painter.save();
 
-#if 0
+
 
     QConicalGradient conicalGradient2(width()/2, height()/2, 90);
-    conicalGradient2.setColorAt(0, QColor(45, 204, 112));
-    conicalGradient2.setColorAt(1.0, QColor(51, 152, 219));
+//    conicalGradient2.setColorAt(0, QColor(45, 204, 112));
+//    conicalGradient2.setColorAt(1.0, QColor(51, 152, 219));
+
+    conicalGradient2.setColorAt(0, Qt::red);
+    conicalGradient2.setColorAt(0.2, Qt::green);
+    conicalGradient2.setColorAt(0.6, Qt::red);
+    conicalGradient2.setColorAt(1.0, Qt::green);
+
     painter.setPen(QPen(QBrush(conicalGradient2), 30));
     painter.drawEllipse(QRectF((width()/2 - 65), (height()/2 - 65), 130, 130));
     painter.restore();
 
-
+#if 1
 
     //QPainterPath画圆角矩形
     painter.save();
