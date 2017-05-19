@@ -3,6 +3,6 @@
 int main(int argc, char *argv[])
 {
     printf("Hello World!\n");
-    printf("吴胜军\r\n");
+    printf("sizeof(float) == %d\r\n",sizeof(float));
     return 0;
 }
