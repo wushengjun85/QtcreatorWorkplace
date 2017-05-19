@@ -6,5 +6,7 @@ int main(int argc, char *argv[])
     printf("sizeof(float) == %d\r\n",sizeof(float));
     printf("sizeof(double) == %d\r\n",sizeof(double));
     printf("sizeof(long) == %d\r\n",sizeof(long));
+    printf("sizeof(long long) == %d\r\n",sizeof(long long));
+
     return 0;
 }
