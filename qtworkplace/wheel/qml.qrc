@@ -6,5 +6,6 @@
     <qresource prefix="/images">
         <file>bg.png</file>
         <file>wheel.png</file>
+        <file>Zhizhen.png</file>
     </qresource>
 </RCC>
