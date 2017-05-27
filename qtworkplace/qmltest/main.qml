@@ -5,6 +5,7 @@ import QtQuick 2.2
 Rectangle {
     width: 800
     height:600
+    color: "blue"
 
     Rectangle{
         anchors.left: parent.left
