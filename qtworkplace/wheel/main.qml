@@ -24,10 +24,6 @@ Window {
         id: wheel;
         anchors.centerIn: parent;
 
-//        x:0
-//        y:100
-
-
         //source: "qrc:///images/wheel.png";// 路径根据自己设置的修改  Zhizhen
         source: "qrc:///images/Zhizhen.png";// 路径根据自己设置的修改
         Behavior on rotation {
