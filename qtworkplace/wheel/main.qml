@@ -22,10 +22,10 @@ Window {
 
     Image {
         id: wheel;
-        //anchors.centerIn: parent;
+        anchors.centerIn: parent;
 
-        x:0
-        y:100
+//        x:0
+//        y:100
 
 
         //source: "qrc:///images/wheel.png";// 路径根据自己设置的修改  Zhizhen
@@ -42,7 +42,7 @@ Window {
             height: wheel.height;
 
             onClicked: {
-                wheel.rotation = 45;
+                wheel.rotation = 360;
             }
         }
     }
