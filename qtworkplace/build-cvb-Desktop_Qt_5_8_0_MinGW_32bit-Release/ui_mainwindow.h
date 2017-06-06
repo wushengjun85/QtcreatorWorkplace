@@ -19,7 +19,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include "vc.h"
+#include <vc.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -36,18 +36,18 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(676, 551);
+        MainWindow->resize(679, 619);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         vC = new VC(centralWidget);
         vC->setObjectName(QStringLiteral("vC"));
-        vC->setGeometry(QRect(110, 60, 401, 311));
+        vC->setGeometry(QRect(150, 90, 371, 291));
         vC->setStyleSheet(QLatin1String("font: 36pt \"AcadEref\";\n"
 "color: rgb(255, 0, 127);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 676, 23));
+        menuBar->setGeometry(QRect(0, 0, 679, 23));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
