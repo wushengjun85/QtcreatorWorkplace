@@ -13,22 +13,7 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <widget class="VC" name="vC" native="true">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>90</y>
-      <width>371</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 36pt &quot;AcadEref&quot;;
-color: rgb(255, 0, 127);</string>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -50,13 +35,6 @@ color: rgb(255, 0, 127);</string>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>VC</class>
-   <extends>QWidget</extends>
-   <header location="global">vc.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

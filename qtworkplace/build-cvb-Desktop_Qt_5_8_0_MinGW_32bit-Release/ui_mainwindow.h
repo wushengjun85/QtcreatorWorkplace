@@ -19,7 +19,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include <vc.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,7 +26,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    VC *vC;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -39,11 +37,6 @@ public:
         MainWindow->resize(679, 619);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        vC = new VC(centralWidget);
-        vC->setObjectName(QStringLiteral("vC"));
-        vC->setGeometry(QRect(150, 90, 371, 291));
-        vC->setStyleSheet(QLatin1String("font: 36pt \"AcadEref\";\n"
-"color: rgb(255, 0, 127);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
