@@ -7,6 +7,9 @@ QString m_scrollCaptionStr;
 
 char *stringarry = {"汉字"};
 
+QString dataSum[5] = {"语文","数学","英语","化学","物理"};
+int numSumTemp = 0;
+
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
@@ -25,7 +28,6 @@ Widget::Widget(QWidget *parent) :
     ui->listWidget->setGridSize(QSize(93,93));
     QListWidgetItem * pItem = new QListWidgetItem;
     pItem->setSizeHint(QSize(90, 92));  //每次改变Item的高度
-    //pItem->
 
     pItem->setText("大节点");
 
@@ -53,6 +55,10 @@ Widget::Widget(QWidget *parent) :
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this,SLOT(updateIndex()));
     timer->start(100);
+
+    Three_timer = new QTimer(this);
+    connect(Three_timer,SIGNAL(timeout()),this,SLOT(sumTest()));
+    Three_timer->start(3000);
 }
 
 Widget::~Widget()
@@ -112,8 +118,8 @@ void Widget::paintEvent(QPaintEvent *event)
     painter.drawText(width() - m_charWidth*m_curIndex, 30, m_showText.left(m_curIndex));
 //    painter.drawText(0, 30, m_showText);
 //    painter.drawText(height() - m_charWidth*m_curIndex, 30, m_showText.left(m_curIndex));
-}
 
+}
 void Widget::updateIndex()
 {
     update();
@@ -121,3 +127,13 @@ void Widget::updateIndex()
     if (m_curIndex*m_charWidth >width())
         m_curIndex = 0;
 }
+
+void Widget::sumTest()
+{
+    ui->label_4->setText(dataSum[numSumTemp++]);
+    if(numSumTemp >= 5)
+    {
+        numSumTemp = 0;
+    }
+}
+

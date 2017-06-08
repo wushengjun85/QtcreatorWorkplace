@@ -29,6 +29,8 @@ private:
     //QListWidget *list;
     QTimer *m_timer;
 
+    QTimer *Three_timer;
+
 
     int m_charWidth;
     int m_curIndex;
@@ -41,6 +43,8 @@ private slots:
     void on_listWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
     void on_pushButton_3_clicked();
     void updateIndex();
+
+    void sumTest();
 
 };
 
