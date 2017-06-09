@@ -59,6 +59,12 @@ Widget::Widget(QWidget *parent) :
     Three_timer = new QTimer(this);
     connect(Three_timer,SIGNAL(timeout()),this,SLOT(sumTest()));
     Three_timer->start(3000);
+
+
+    Five_timer = new QTimer(this);
+    connect(Five_timer,SIGNAL(timeout()),this,SLOT(sumTest()));
+    Five_timer->start(5000);
+
 }
 
 Widget::~Widget()

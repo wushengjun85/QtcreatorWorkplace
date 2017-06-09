@@ -30,6 +30,7 @@ private:
     QTimer *m_timer;
 
     QTimer *Three_timer;
+    QTimer *Five_timer;
 
 
     int m_charWidth;
@@ -45,6 +46,7 @@ private slots:
     void updateIndex();
 
     void sumTest();
+    void hideTest();
 
 };
 
