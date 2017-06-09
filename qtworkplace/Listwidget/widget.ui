@@ -200,6 +200,7 @@ color: rgb(255, 0, 127);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 0, 127);
+background-image: url(:/new/prefix1/zhuanshu);
 color: rgb(85, 255, 0);</string>
      </property>
      <property name="text">

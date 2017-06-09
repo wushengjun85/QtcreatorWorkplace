@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file alias="zhuanshu">01.png</file>
+    </qresource>
+</RCC>
