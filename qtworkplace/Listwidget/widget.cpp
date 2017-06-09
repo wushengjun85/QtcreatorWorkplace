@@ -2,6 +2,7 @@
 #include "ui_widget.h"
 #include<QString>
 #include <QTextCodec>
+#include<QDebug>
 
 QString m_scrollCaptionStr;
 
@@ -138,21 +139,6 @@ void Widget::updateIndex()
 void Widget::sumTest()
 {
 
-
-
-    if(tempNum == 3)
-    {
-        Three_timer->stop();
-        //Five_timer->start();
-    }
-    else
-    {
-        ui->label_4->setText(dataSum[numSumTemp++]);
-        if(numSumTemp >= 5)
-        {
-            numSumTemp = 0;
-        }
-    }
 #if 0
     if(ui->label_4->isHidden())
     {
@@ -173,18 +159,29 @@ void Widget::sumTest()
 
 void Widget::hideTest()
 {
+
+    ui->label_4->setText(dataSum[numSumTemp]);
+
     tempNum++;
-    if(tempNum == 4)
+    qDebug()<<"tempNum == "<<tempNum<<endl;
+    if((tempNum == 3)||(tempNum == 4))
     {
-        ui->label_4->setText(" ");
+        qDebug()<<"222222222222222222222 == "<<tempNum<<endl;
+        if(tempNum == 4)
+        {
+            numSumTemp++;
+            if(numSumTemp >= 5)
+            {
+                numSumTemp = 0;
+            }
+        }
+
+         ui->label_4->setText(" ");
     }
     else if(tempNum == 5)
     {
         tempNum = 0;
-        Three_timer->start();
-        //Five_timer->stop();
     }
-
 
 }
 
