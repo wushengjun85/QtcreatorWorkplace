@@ -36,6 +36,7 @@ Widget::Widget(QWidget *parent) :
     ui->listWidget->insertItem(6,pItem);
     ui->listWidget->setGridSize(QSize(93,93));
 
+
     //ui->listWidget-> setStyleSheet("gridline-color: rgb(255, 0, 0)");//"border:2px solid red;"
     //ui->listWidget->setGridSize(QSize(20,20));
 
