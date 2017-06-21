@@ -24,8 +24,6 @@
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 0, 127);
-image: url(:/new/prefix1/指针大.png);
-background-image: url(:/new/prefix1/指针大.png);
 background-color: rgb(85, 0, 255);
 font: 36pt &quot;AcadEref&quot;;</string>
    </property>
