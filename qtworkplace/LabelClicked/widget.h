@@ -2,7 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-
+#include <QEvent>
 namespace Ui {
 class Widget;
 }
@@ -14,6 +14,8 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
+
+    bool eventFilter(QObject *watched, QEvent  *event);
 
 private:
     Ui::Widget *ui;

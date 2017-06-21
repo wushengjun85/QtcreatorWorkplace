@@ -31,3 +31,6 @@ HEADERS  += widget.h \
     mytestlabel.h
 
 FORMS    += widget.ui
+
+RESOURCES += \
+    tupian.qrc
