@@ -34,9 +34,7 @@ public:
         label = new QLabel(Widget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(260, 150, 191, 81));
-        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 127);\n"
-"image: url(:/new/prefix1/\346\214\207\351\222\210\345\244\247.png);\n"
-"background-image: url(:/new/prefix1/\346\214\207\351\222\210\345\244\247.png);\n"
+        label->setStyleSheet(QLatin1String("color: rgb(255, 0, 127);\n"
 "background-color: rgb(85, 0, 255);\n"
 "font: 36pt \"AcadEref\";"));
         label_2 = new QLabel(Widget);
