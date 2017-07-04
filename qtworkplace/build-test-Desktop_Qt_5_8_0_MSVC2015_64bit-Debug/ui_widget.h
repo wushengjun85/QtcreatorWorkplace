@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,17 +21,12 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QSpinBox *spinBox;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
-        Widget->resize(783, 565);
-        spinBox = new QSpinBox(Widget);
-        spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setGeometry(QRect(580, 280, 91, 51));
-        spinBox->setButtonSymbols(QAbstractSpinBox::UpDownArrows);
+        Widget->resize(400, 300);
 
         retranslateUi(Widget);
 
