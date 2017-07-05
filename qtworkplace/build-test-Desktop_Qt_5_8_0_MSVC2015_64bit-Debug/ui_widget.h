@@ -37,6 +37,7 @@ public:
     QFrame *line;
     QLabel *label;
     QFrame *line_2;
+    QLabel *label_2;
 
     void setupUi(QWidget *Widget)
     {
@@ -55,7 +56,7 @@ public:
         dial->setMaximum(99);
         lineEdit = new QLineEdit(Widget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(310, 210, 221, 81));
+        lineEdit->setGeometry(QRect(310, 210, 221, 51));
         horizontalSlider = new QSlider(Widget);
         horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
         horizontalSlider->setGeometry(QRect(180, 120, 160, 22));
@@ -93,6 +94,9 @@ public:
         line_2->setStyleSheet(QStringLiteral("background-color: rgb(255, 85, 255);"));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
+        label_2 = new QLabel(Widget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(310, 290, 221, 41));
 
         retranslateUi(Widget);
 
@@ -103,6 +107,7 @@ public:
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
         label->setText(QApplication::translate("Widget", "666666", Q_NULLPTR));
+        label_2->setText(QString());
     } // retranslateUi
 
 };

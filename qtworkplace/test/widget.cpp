@@ -5,6 +5,9 @@
 
 float a = 0.096;
 uchar tempProcessBar = 0;
+int TT = 0;
+float FF = 0.0;
+
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
@@ -23,7 +26,7 @@ Widget::Widget(QWidget *parent) :
 
     timerProcessbar = new QTimer();
     connect(timerProcessbar,SIGNAL(timeout()),this,SLOT(processSlot()));
-    timerProcessbar->start(100);
+    timerProcessbar->start(1000);
 }
 
 Widget::~Widget()
@@ -52,6 +55,14 @@ void Widget::processSlot()
                                    }");
 
    ui->line->setVisible(true);
+
+   TT++;
+    FF = TT;
+   FF = FF/10;
+
+   qDebug()<<"TT = "<<TT<<endl;
+   ui->lineEdit->setText(QString::number(FF,'f',1));
+   ui->label_2->setText(QString::number(FF,'f',3));
 
     if(tempProcessBar>=100)
     {
