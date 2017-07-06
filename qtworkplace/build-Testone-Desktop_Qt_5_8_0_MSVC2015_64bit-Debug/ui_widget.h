@@ -45,8 +45,8 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
-        lineEdit->setText(QApplication::translate("Widget", "11", Q_NULLPTR));
-        lineEdit_2->setText(QApplication::translate("Widget", "66", Q_NULLPTR));
+        lineEdit->setText(QApplication::translate("Widget", "1111", Q_NULLPTR));
+        lineEdit_2->setText(QApplication::translate("Widget", "6666", Q_NULLPTR));
     } // retranslateUi
 
 };
