@@ -24,6 +24,9 @@ Widget::Widget(QWidget *parent) :
 //    layout->addWidget(button4);
 //    layout->addWidget(button5);
 
+
+
+
     QGridLayout *layout = new QGridLayout;
     layout->addWidget(button1, 0, 0);
     layout->addWidget(button2, 0, 1);
@@ -37,7 +40,7 @@ Widget::Widget(QWidget *parent) :
     this->show();
 #endif
 
-#if 0
+#ifdef QVBOX
         QVBoxLayout *layout = new QVBoxLayout;
         layout->addWidget(ui->lineEdit);
         layout->addWidget(ui->lineEdit_2);
