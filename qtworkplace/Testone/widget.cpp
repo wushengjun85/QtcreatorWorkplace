@@ -36,7 +36,7 @@ Widget::Widget(QWidget *parent) :
 
 //    window->setLayout(layout);
 //    window->show();
-    this->setLayout(layout);
+    //this->setLayout(layout);
     this->show();
 #endif
     //2017.7.11
