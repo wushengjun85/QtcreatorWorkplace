@@ -39,7 +39,7 @@ Widget::Widget(QWidget *parent) :
     this->setLayout(layout);
     this->show();
 #endif
-
+    //2017.7.11
 #ifdef QVBOX
         QVBoxLayout *layout = new QVBoxLayout;
         layout->addWidget(ui->lineEdit);
