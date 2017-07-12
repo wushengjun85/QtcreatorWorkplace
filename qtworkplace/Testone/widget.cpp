@@ -25,6 +25,9 @@ Widget::Widget(QWidget *parent) :
 //    layout->addWidget(button5);
 
 
+    //
+
+    //
 #if 0
 layout()->addWidget(button2,0,1);
 #endif
