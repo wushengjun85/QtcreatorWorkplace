@@ -14,6 +14,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,12 +23,26 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
+    QProgressBar *progressBar;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
-        Widget->resize(400, 300);
+        Widget->resize(856, 624);
+        progressBar = new QProgressBar(Widget);
+        progressBar->setObjectName(QStringLiteral("progressBar"));
+        progressBar->setGeometry(QRect(290, 300, 381, 51));
+        progressBar->setValue(24);
+        progressBar->setTextVisible(true);
+        pushButton = new QPushButton(Widget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(190, 300, 81, 51));
+        pushButton_2 = new QPushButton(Widget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(680, 300, 81, 51));
 
         retranslateUi(Widget);
 
@@ -36,6 +52,8 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("Widget", "\345\207\217\345\274\261", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("Widget", "\345\242\236\345\274\272", Q_NULLPTR));
     } // retranslateUi
 
 };
