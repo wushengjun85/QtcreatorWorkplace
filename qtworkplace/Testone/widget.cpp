@@ -16,6 +16,7 @@ Widget::Widget(QWidget *parent) :
     QPushButton *button3 = new QPushButton("Three");
     QPushButton *button4 = new QPushButton("Four");
     QPushButton *button5 = new QPushButton("Five");
+//2017.7.13
 
 //    QVBoxLayout *layout = new QVBoxLayout;
 //    layout->addWidget(button1);
