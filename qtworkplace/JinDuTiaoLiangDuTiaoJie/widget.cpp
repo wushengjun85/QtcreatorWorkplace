@@ -1,5 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include<QDebug>
+
 uchar i = 1;
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -10,6 +12,9 @@ Widget::Widget(QWidget *parent) :
     ui->progressBar->setValue(1);
     ui->progressBar->setStyleSheet("QProgressBar {border: 2px solid grey;border-radius: 5px;text-align: center;}");
 
+    int nn = 8;
+    int ff = 7<<8;
+    qDebug()<<"7<<8 == "<<ff<<endl;
 
 }
 
