@@ -1,3 +1,6 @@
+
+/*可以作为多页面切换的qml 程序样本*/
+
 import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtQuick 2.4
