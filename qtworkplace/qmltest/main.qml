@@ -111,6 +111,7 @@
 //}
 
 import QtQuick 2.3
+import QtQuick 2.2
 import QtQuick.Window 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.2
@@ -184,40 +185,103 @@ import QtQuick.Controls 1.2
 
 
 
-StackView {
-    delegate: StackViewDelegate {
-        function transitionFinished(properties)
-        {
-            properties.exitItem.x = 0
-            properties.exitItem.rotation = 0
-        }
+//StackView {
+//    delegate: StackViewDelegate {
+//        function transitionFinished(properties)
+//        {
+//            properties.exitItem.x = 0
+//            properties.exitItem.rotation = 0
+//        }
 
-        pushTransition: StackViewTransition {
-            SequentialAnimation {
-                ScriptAction {
-                    script: enterItem.rotation = 90
-                }
-                PropertyAnimation {
-                    target: enterItem
-                    property: "x"
-                    from: enterItem.width
-                    to: 0
-                }
-                PropertyAnimation {
-                    target: enterItem
-                    property: "rotation"
-                    from: 90
-                    to: 0
-                }
-            }
-            PropertyAnimation {
-                target: exitItem
-                property: "x"
-                from: 0
-                to: -exitItem.width
-            }
+//        pushTransition: StackViewTransition {
+//            SequentialAnimation {
+//                ScriptAction {
+//                    script: enterItem.rotation = 90
+//                }
+//                PropertyAnimation {
+//                    target: enterItem
+//                    property: "x"
+//                    from: enterItem.width
+//                    to: 0
+//                }
+//                PropertyAnimation {
+//                    target: enterItem
+//                    property: "rotation"
+//                    from: 90
+//                    to: 0
+//                }
+//            }
+//            PropertyAnimation {
+//                target: exitItem
+//                property: "x"
+//                from: 0
+//                to: -exitItem.width
+//            }
+//        }
+//    }
+//}
+
+//Canvas{
+//    width: 400;
+//    height: 240;
+
+//    onPaint: {
+//        var ctx = getContext("2d");
+//        ctx.lineWidth = 2;
+//        ctx.strokeStyle = "red";
+//        ctx.fillStyle = "blue";
+
+//        ctx.font = "42px sans-serif"
+//        ctx.beginPath();
+//        //ctx.rect(100,80,120,80);
+//        ctx.text("Fill text on Path",10,150);
+//        ctx.fill();
+//        ctx.stroke();
+//    }
+//}
+
+
+Rectangle{
+    id:rootItem;
+    width:1024
+    height:600;
+
+    Rectangle{
+        id:rect;
+        width: 100;
+        height: 100;
+        x:20;
+        y:20;
+        color: "red"
+    }
+    SpringAnimation{
+        id:springX;
+        target: rect;
+        property: "x";
+        spring: 1;
+        damping: 0.06;
+        epsilon: 0.25;
+    }
+    SpringAnimation{
+        id:springY;
+        target: rect;
+        property:"y";
+        spring: 3;
+        damping: 0.06;
+        epsilon: 0.25;
+    }
+    MouseArea{
+        anchors.fill: parent;
+        onClicked: {
+        springX.from = rect.x;
+        springX.to = mouse.x +120;
+        springX.start();
+        springY.from = rect.y;
+        springY.to = mouse.y + 120;
+        springY.start();
         }
     }
 }
+
 
 
